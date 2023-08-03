@@ -1,0 +1,26 @@
+﻿version: '3'
+services:
+  backend:
+    image: spring-angular:1
+    build:
+      context: ./Spring-Boot-
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./BankingApp
+    ports:
+      - 4200:4200
+    depends_on:
+      - backend
+
+  db:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=Mysql@19999
+      - MYSQL_DATABASE=Bankk
+      - MYSQL_USER=bankuserr
+      - MYSQL_PASSWORD=Bank@19999

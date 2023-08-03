@@ -1,0 +1,24 @@
+<h3>ALL Accounts</h3>
+<table class = "styled-table">
+    <thead>
+        <th>Account No</th>
+        <th>Account Holder</th>
+        <th>Branch</th>
+        <th>Bank Code</th>
+        <th>Account Type</th>
+        <th>Balance</th>
+        <th>Transactions</th>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let a of accounts">
+            <td>{{a.accountNo}}</td>
+            <td>{{a.accountHolder}}</td>
+            <td>{{a.branch}}</td>
+            <td>{{a.bankCode}}</td>
+            <td>{{a.aType}}</td>
+            <td>{{a.accountBalance}}</td>
+       <td> <button type="button" onclick="" routerLink>View</button>  </td>
+        </tr>
+    </tbody>
+    
+</table>

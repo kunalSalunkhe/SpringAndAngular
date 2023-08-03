@@ -1,0 +1,28 @@
+<h3>ALL Customers</h3>
+<table class = "styled-table">
+    <thead>
+        <th>Customer Id</th>
+        <th>Addres</th>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Edit</th>
+        <th>Account</th>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let c of page?.content">
+            <td>{{c.customerId}}</td>
+            <td>{{c.address}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.contactNo}}</td>
+       <td> <button type="button" onclick="" routerLink>EDIT</button> </td>
+       <td> <button type="button" (click)="getAccounts(c.customerId)">View Account</button></td>
+        </tr>
+    </tbody>
+    
+</table>
+
+<div>
+    <button [disabled]="currentPage === 0" (click)="goToPage(currentPage - 1)">Previous</button>
+    <span>Page {{ currentPage + 1 }} of {{ page?.totalPages }}</span>
+    <button [disabled]="currentPage === page?.totalPages! - 1" (click)="goToPage(currentPage + 1)">Next</button>
+</div>
